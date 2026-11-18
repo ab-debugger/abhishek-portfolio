@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Abhishek Kumar Verma — aspiring web developer portfolio." />
+  <title>Abhishek Kumar Verma | Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0b0d12; --panel:#121620; --text:#f3f5f8; --muted:#a5adbd; --line:#242b39; --accent:#8cf0bd; --accent2:#8ea8ff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; line-height:1.65; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1100px, 92%); margin:auto; }
+    header { position:sticky; top:0; z-index:10; backdrop-filter:blur(16px); background:rgba(11,13,18,.8); border-bottom:1px solid rgba(255,255,255,.06); }
+    nav { height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .logo { font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:-.04em; font-size:1.1rem; }
+    .logo span { color:var(--accent); }
+    .nav-links { display:flex; gap:26px; align-items:center; font-size:.92rem; color:var(--muted); }
+    .nav-links a:hover { color:var(--accent); }
+    .nav-cta { border:1px solid var(--line); padding:9px 15px; border-radius:999px; color:var(--text)!important; }
+    .hero { min-height:calc(100vh - 72px); display:grid; grid-template-columns:1.2fr .8fr; gap:40px; align-items:center; padding:75px 0 90px; }
+    .eyebrow { color:var(--accent); font-size:.84rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { font:700 clamp(3rem,7vw,5.7rem)/1.04 'Space Grotesk',sans-serif; letter-spacing:-.065em; margin:18px 0 22px; }
+    h1 .highlight { color:var(--accent); }
+    .intro { color:var(--muted); font-size:1.13rem; max-width:610px; }
+    .actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:32px; }
+    .btn { padding:12px 19px; border-radius:999px; font-weight:700; font-size:.95rem; border:1px solid var(--line); transition:.2s; display:inline-flex; align-items:center; gap:9px; }
+    .btn-primary { background:var(--accent); color:#07130d; border-color:var(--accent); }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-secondary:hover { border-color:var(--accent); color:var(--accent); }
+    .hero-card { background:linear-gradient(145deg,#171e2b,#10141d); border:1px solid var(--line); border-radius:26px; padding:30px; box-shadow:0 25px 70px rgba(0,0,0,.24); }
+    .hero-card .topline { color:var(--muted); font-size:.85rem; display:flex; justify-content:space-between; }
+    .avatar { width:100px; height:100px; border-radius:25px; display:grid; place-items:center; margin:28px 0; background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#0a1015; font:700 2.1rem 'Space Grotesk',sans-serif; }
+    .hero-card h2 { font:600 1.45rem 'Space Grotesk',sans-serif; margin:0 0 8px; }
+    .hero-card p { color:var(--muted); margin:0; }
+    .status { display:inline-flex; align-items:center; gap:8px; margin-top:22px; color:var(--accent); font-size:.9rem; }
+    .dot { width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent); }
+    section { padding:85px 0; border-top:1px solid rgba(255,255,255,.05); }
+    .section-head { margin-bottom:38px; }
+    h2.section-title { font:700 clamp(2rem,4vw,3.1rem) 'Space Grotesk',sans-serif; letter-spacing:-.05em; margin:9px 0; }
+    .section-sub { color:var(--muted); max-width:620px; }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+    .box { border:1px solid var(--line); background:var(--panel); border-radius:20px; padding:25px; }
+    .box h3 { margin:0 0 10px; font:600 1.2rem 'Space Grotesk',sans-serif; }
+    .box p { color:var(--muted); margin:0; }
+    .skills { display:flex; flex-wrap:wrap; gap:12px; }
+    .skill { background:#171d28; border:1px solid #2a3343; border-radius:12px; padding:11px 15px; color:#dce4f1; font-weight:600; }
+    .skill.learning { color:var(--accent2); border-color:#323c58; }
+    .project-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .project { border:1px solid var(--line); background:var(--panel); border-radius:22px; padding:25px; transition:.25s; }
+    .project:hover { transform:translateY(-4px); border-color:#3a465d; }
+    .project-number { color:var(--accent); font-size:.82rem; font-weight:700; letter-spacing:.08em; }
+    .project h3 { font:600 1.45rem 'Space Grotesk',sans-serif; margin:10px 0; }
+    .project p { color:var(--muted); min-height:72px; }
+    .tags { display:flex; gap:8px; flex-wrap:wrap; margin:18px 0 22px; }
+    .tag { font-size:.78rem; padding:5px 10px; border-radius:999px; background:#1b2230; color:#c8d2e3; }
+    .project-link { color:var(--accent); font-weight:700; }
+    .contact-box { display:flex; justify-content:space-between; align-items:center; gap:25px; background:linear-gradient(130deg,#172126,#151a25); border:1px solid #2a3541; border-radius:25px; padding:34px; }
+    .contact-box h3 { font:700 1.7rem 'Space Grotesk',sans-serif; margin:0 0 8px; }
+    .contact-box p { color:var(--muted); margin:0; }
+    .contact-links { display:flex; gap:12px; flex-wrap:wrap; }
+    footer { padding:28px 0 38px; color:var(--muted); font-size:.9rem; display:flex; justify-content:space-between; gap:16px; }
+    .reveal { opacity:0; transform:translateY(18px); transition:opacity .65s,transform .65s; }
+    .reveal.visible { opacity:1; transform:none; }
+    @media(max-width:800px) { .hero{grid-template-columns:1fr; padding:55px 0 65px;} .hero-card{max-width:480px;} .about-grid,.project-grid{grid-template-columns:1fr;} .contact-box{align-items:flex-start; flex-direction:column;} }
+    @media(max-width:560px) { nav{height:64px;} .nav-links{gap:14px;font-size:.8rem;} .nav-links a:not(.nav-cta){display:none;} h1{font-size:3.1rem;} section{padding:65px 0;} .box,.project{padding:21px;} footer{flex-direction:column;} }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="logo" href="#home">AKV<span>.</span></a>
+      <div class="nav-links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a class="nav-cta" href="#contact">Let's connect ↗</a></div>
+    </nav>
+  </header>
+  <main>
+    <div class="wrap hero" id="home">
+      <div class="reveal">
+        <div class="eyebrow">Aspiring Web Developer</div>
+        <h1>Hi, I'm<br><span class="highlight">Abhishek.</span></h1>
+        <p class="intro">I enjoy turning ideas into clean, useful web experiences. I'm learning, building projects, and growing my skills one step at a time.</p>
+        <div class="actions"><a class="btn btn-primary" href="#projects">Explore my work ↓</a><a class="btn btn-secondary" href="#contact">Get in touch ↗</a></div>
+      </div>
+      <aside class="hero-card reveal">
+        <div class="topline"><span>PORTFOLIO / 2026</span><span>01—04</span></div>
+        <div class="avatar">AK</div>
+        <h2>Abhishek Kumar Verma</h2>
+        <p>Web Development · Student · Lifelong learner</p>
+        <div class="status"><span class="dot"></span> Open to internship opportunities</div>
+      </aside>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">A little about me</div><h2 class="section-title">Curious by nature.<br>Builder by practice.</h2><p class="section-sub">I'm a computer science student interested in web development and creating practical digital products. I like learning by building, improving my code, and exploring how real websites work.</p></div>
+        <div class="about-grid reveal">
+          <div class="box"><h3>🎓 Education</h3><p>B.Tech — Radharaman Institute of Technology & Science</p></div>
+          <div class="box"><h3>🎯 Currently focused on</h3><p>Frontend development, JavaScript, React, and building a strong foundation for backend development.</p></div>
+        </div>
+      </div>
+    </section>
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">My toolkit</div><h2 class="section-title">Skills I'm working with</h2><p class="section-sub">A growing set of tools and technologies I use while learning and creating projects.</p></div>
+        <div class="skills reveal">
+          <span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span><span class="skill learning">React</span><span class="skill learning">Node.js</span><span class="skill learning">Express.js</span><span class="skill">Git & GitHub</span><span class="skill learning">MongoDB</span><span class="skill">Responsive Design</span>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">Selected work</div><h2 class="section-title">Projects I've built</h2><p class="section-sub">A few projects that reflect my learning, problem-solving, and hands-on experience.</p></div>
+        <div class="project-grid reveal">
+          <article class="project"><div class="project-number">PROJECT / 01</div><h3>StudyShare</h3><p>A notes-sharing platform where students can upload, browse, download, and bookmark study materials.</p><div class="tags"><span class="tag">Web Development</span><span class="tag">MongoDB</span><span class="tag">Authentication</span></div><a class="project-link" href="https://github.com/ab-debugger/notes-sharing-web" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></article>
+          <article class="project"><div class="project-number">PROJECT / 02</div><h3>Personal Portfolio</h3><p>A responsive portfolio website to showcase my skills, projects, learning journey, and ways to connect.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Responsive</span></div><a class="project-link" href="#home">You're viewing it ↗</a></article>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="wrap reveal">
+        <div class="section-head"><div class="eyebrow">Let's talk</div><h2 class="section-title">Have an opportunity<br>or idea in mind?</h2><p class="section-sub">I'm open to internships, collaborations, and opportunities to learn with a team.</p></div>
+        <div class="contact-box"><div><h3>Let's connect.</h3><p>Reach out or check out my profiles.</p></div><div class="contact-links"><a class="btn btn-primary" href="mailto:abhishekkumarverma605@gmail.com">Email me ↗</a><a class="btn btn-secondary" href="https://github.com/ab-debugger" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/abhishek-kumar-verma-04599b2b4" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap"><span>© 2026 Abhishek Kumar Verma</span><span>Designed & built with curiosity.</span></footer>
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
